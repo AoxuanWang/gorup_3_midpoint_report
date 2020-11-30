@@ -6,25 +6,29 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
+library(knitr)
 knitr::opts_chunk$set(echo = TRUE)
+source("scripts/second_chart.R")
+data <- read.csv("data/country_wise_latest.csv", stringsAsFactors = FALSE)
 ```
 
-## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
+
+
+
+
+
+
+
+
+
+
+## Pie Chart
+#### The pie chart below visually shows the top 15 countries which has the highest death rate due to COVID-19. Percentage of how every country's death rate is distributed to all 15 countries is labelled on the chart. The chart shows that Yemen has a much greater death rate than other countries. Pie chart is chosen because it can be visualized simpler than other types of graphs as size of the circle can be made proportional to the total quantity.
+```{r plot, echo=FALSE}
+
+second_chart_plot(data)
+
 ```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
